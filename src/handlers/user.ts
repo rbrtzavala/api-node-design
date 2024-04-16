@@ -1,5 +1,5 @@
-import { comparePasswords, createJWT,hashPassword } from '../modules/auth';
 import prisma from '../db';
+import { comparePasswords, createJWT,hashPassword } from '../modules/auth';
 
 export const createNewUser = async (req, res) => {
     const user = await prisma.user.create({
@@ -24,7 +24,7 @@ export const signin = async (req, res) => {
 
     if (!isValid) {
         res.satus(401)
-        res.json({message: 'wrong password'})
+        res.json({message: 'Invalid username or password'})
         return
     }
 
