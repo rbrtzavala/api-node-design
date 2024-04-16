@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
   } else if (err.type === 'input') {
     res.status(400).json({message: 'invalid input'})
   } else {
-    res.status(500).json({message: 'oops, that\'s op us'})
+    res.status(500).json({message: 'oops, that\'s on us'})
   }
 })
 
